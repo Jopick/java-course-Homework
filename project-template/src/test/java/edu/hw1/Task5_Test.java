@@ -11,7 +11,7 @@ class Task5_Test {
     @DisplayName("палиндром")
     void test_isPalindromeDescendant() {
         Task5 palindrom;
-        palindrom = new Task5(11211230);
+        palindrom = new Task5();
         assertEquals(true, palindrom.isPalindromeDescendant(11211230));
         assertEquals(true, palindrom.isPalindromeDescendant(13001120));
         assertEquals(true, palindrom.isPalindromeDescendant(23336014));

@@ -12,7 +12,7 @@ class Task4_Test {
     @DisplayName("Исправление строки")
     void test_fixString() {
         Task4 fix;
-        fix = new Task4("123456");
+        fix = new Task4();
         assertEquals("214365", fix.fixString("123456"));
         assertEquals("This is a mixed up string.", fix.fixString("hTsii  s aimex dpus rtni.g"));
         assertEquals("abcde", fix.fixString("badce"));

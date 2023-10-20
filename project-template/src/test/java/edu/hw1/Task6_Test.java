@@ -8,10 +8,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Task6_Test {
     @Test
-    @DisplayName("kkfkfk")
+    @DisplayName("countK")
     void test_countK() {
         Task6 chislo;
-        chislo = new Task6(6621);
+        chislo = new Task6();
         assertEquals(5, chislo.countK(6621));
         assertEquals(4, chislo.countK(6554));
         assertEquals(3, chislo.countK(1234));

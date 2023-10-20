@@ -1,16 +1,11 @@
 package edu.hw1;
 
 public class Task8 {
-    private int[][] desk;
-
-    public Task8(int[][] desk) {
-        this.desk = desk;
-    }
 
     public static final int DESK_SIZE = 8;
 
     public boolean knightBoardCapture(int[][] desk) {
-        this.desk = desk;
+
         int ch = 0;
         for (int i = 0; i < DESK_SIZE; i++) {
             for (int j = 0; j < DESK_SIZE; j++) {

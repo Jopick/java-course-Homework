@@ -1,21 +1,10 @@
 package edu.hw1;
 
-
 public class Task7 {
-
-    private Integer m;
-    public Integer shift;
-
-    public Task7(Integer m, Integer shift) {
-        this.m = m;
-        this.shift = shift;
-    }
 
     public static final int LAST_ELEMENT = 10;
 
     public Integer rotateRight(Integer m, Integer shift) {
-        this.m = m;
-        this.shift = shift;
 
         String number = Integer.toBinaryString(m);
 
@@ -46,8 +35,6 @@ public class Task7 {
     }
 
     public Integer rotateLeft(Integer m, Integer shift) {
-        this.m = m;
-        this.shift = shift;
 
         String number = Integer.toBinaryString(m);
 

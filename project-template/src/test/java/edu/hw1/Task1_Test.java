@@ -11,7 +11,7 @@ class Task1_Test {
     @DisplayName("Минуты и секунды")
     void test_time() {
         Task1 chek;
-        chek = new Task1("46:59");
+        chek = new Task1();
         assertEquals(60, chek.time("01:00"));
         assertEquals(836, chek.time("13:56"));
         assertEquals(-1, chek.time("10:60"));

@@ -8,18 +8,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Task8_Test {
     @Test
-    @DisplayName("kkfkfk")
+    @DisplayName("Конь")
     void test_knightBoardCapture() {
         Task8 knight;
-        knight = new Task8(new int[][] {
-            {0, 0, 0, 1, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 1, 0, 0, 0, 1, 0, 0},
-            {0, 0, 0, 0, 1, 0, 1, 0},
-            {0, 1, 0, 0, 0, 1, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 1, 0, 0, 0, 0, 0, 1},
-            {0, 0, 0, 0, 1, 0, 0, 0}});
+        knight = new Task8();
         assertEquals(true, knight.knightBoardCapture(new int[][] {{0, 0, 0, 1, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0},
             {0, 1, 0, 0, 0, 1, 0, 0},

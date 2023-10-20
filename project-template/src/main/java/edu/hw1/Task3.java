@@ -1,17 +1,8 @@
 package edu.hw1;
 
 public class Task3 {
-    private int[] args;
-    private int[] vlog;
-
-    public Task3(int[] args, int[] vlog) {
-        this.args = args;
-        this.vlog = vlog;
-    }
 
     public boolean isNestable(int[] args, int[] vlog) {
-        this.args = args;
-        this.vlog = vlog;
 
         int maxargs = args[0];
         int minargs = args[0];
