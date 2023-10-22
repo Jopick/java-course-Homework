@@ -1,7 +1,9 @@
 package edu.project1;
 
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.Map;
 
 public class Main_Consol {
     public static final String Question = "Какая буква ещё не открыта?";
@@ -12,27 +14,33 @@ public class Main_Consol {
 
     public static String Eror_Input = "Нужно ввести одну букву, а не слово";
 
+    public static String Repeat_Word = "Вы уже вводили эту буку";
+
     public static String Wrong_Answer = "Missed, mistake";
 
-    public static String Game_Over = "Молодец ты победил";
+    public static String Game_Over = "Ахаха слабо, слабо, проиграл.";
+
+    public static String Game_Win = "Молодец, ты победил!";
+
+    public static String More_Try = "Дать тебе ёще 5 попыток?";
+
 
     public static void main(String[] args) throws Exception {
 
-        //Generate_Words Hidden;
-        //Hidden = new Generate_Words();
+
+        Map<String, String> dictionary = new HashMap<String, String>();
 
         String HiddenWord;
         HiddenWord = Generate_Words.GenerateRandomWord();
-        //System.out.println(HiddenWord.charAt(0));
 
         int quantity_mistake = 0;
 
         Scanner scanner = new Scanner(System.in);
 
-        String[] Answer = new String[HiddenWord.length()];
+       // String[] Answe = new String[HiddenWord.length()];
 
         for (int i = 0; i < HiddenWord.length(); i++) {
-            Answer[i] = "*";
+            dictionary.put(String.valueOf(HiddenWord.charAt(i)), "*");
         }
 
         int win = 0;
@@ -52,35 +60,57 @@ public class Main_Consol {
 
             } else {
                 if (HiddenWord.contains(inputWord)) {
-                    for (int i = 0; i < HiddenWord.length(); i++) {
-                        if (HiddenWord.charAt(i) == inputWord.charAt(0)) {
 
-                            if (!Answer[i].equals(String.valueOf(HiddenWord.charAt(i)))) {
-                                win++;
+                    if (dictionary.get(inputWord).equals("*")) {
+                        win += find.count_element(inputWord, HiddenWord);
 
-                                Answer[i] = String.valueOf(HiddenWord.charAt(i));
-                            }
-                        }
+                        System.out.println("Hit!");
+                    } else {
+                        System.out.println(Repeat_Word);
                     }
-                    System.out.println("Hit!");
+
+                    if (dictionary.containsKey(inputWord)) {
+                        dictionary.put(inputWord, inputWord);
+                    }
+
+
+                    if (dictionary.containsKey(inputWord)) {
+                        dictionary.put(inputWord, inputWord);
+                    }
+
                 } else {
                     quantity_mistake++;
                     System.out.println(Wrong_Answer + " " + quantity_mistake + " of " + Maximum_Mistake);
                 }
 
-                for (int i = 0; i < Answer.length; i++) {
-                    System.out.print(Answer[i]);
+                for (int i = 0; i < HiddenWord.length(); i++) {
+                    System.out.print(dictionary.get(String.valueOf(HiddenWord.charAt(i))));
+
                 }
 
                 System.out.println();
 
                 if (win == HiddenWord.length()) {
-                    System.out.println(Game_Over);
+                    System.out.println(Game_Win);
                     System.exit(0);
 
                 }
             }
+            if (quantity_mistake == Maximum_Mistake) {
+
+                System.out.println(More_Try);
+                String input = scanner.nextLine();
+
+                if (input.equals("да")) {
+                    quantity_mistake -= 5;
+                }
+            }
+
+        }
+        if (Maximum_Mistake == quantity_mistake) {
+            System.out.println(Game_Over);
 
         }
     }
+
 }

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Task1_Test {
+class Constant_Test {
     @Test
     @DisplayName("Минуты и секунды")
     void test_time() {
